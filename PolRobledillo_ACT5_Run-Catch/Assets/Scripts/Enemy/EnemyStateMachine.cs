@@ -35,13 +35,13 @@ public class EnemyStateMachine : MonoBehaviour
     public float cooldownBetweenChargeAttacks = 5f;
     public float cooldownTimerChargeAttack = 0f;
     public float chargeAttackDamage = 25f;
+    public float chargeDistance = 3.5f;
     public float chargeTime = 1f;
     public bool performingChargeAttack = false;
 
     [Header("Telegraph Charge Attack Settings")]
     public GameObject telegraphChargeAttackEffect;
     public GameObject telegraphChargeAttackEffectImage;
-    public float chargeDistance = 3.5f;
     public float telegraphChargeDuration = 2f;
     public bool finishedTelegraphingChargeAttack = false;
 
@@ -51,6 +51,7 @@ public class EnemyStateMachine : MonoBehaviour
     public float cooldownTimerSpinAttack = 0f;
     public float spinAttackDuration = 3f;
     public float spinAttackDamagePerSecond = 15f;
+    public float spinAttackRange = 4f;
     public bool performingSpinAttack = false;
 
     [Header("Telegraph Spin Attack Settings")]
