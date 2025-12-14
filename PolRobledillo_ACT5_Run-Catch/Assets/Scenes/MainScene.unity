@@ -271,7 +271,7 @@ SphereCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_Radius: 0.77
   m_Center: {x: -0.23, y: 0, z: 0}
@@ -1586,7 +1586,7 @@ PrefabInstance:
       addedObject: {fileID: 1766946442}
     - targetCorrespondingSourceObject: {fileID: 4245915190017150719, guid: cbc814ca6b730954b8a5e3641bde01c9, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 1766946441}
+      addedObject: {fileID: 1766946443}
     - targetCorrespondingSourceObject: {fileID: 1269820307859773612, guid: cbc814ca6b730954b8a5e3641bde01c9, type: 3}
       insertIndex: -1
       addedObject: {fileID: 26516195}
@@ -1656,14 +1656,14 @@ CapsuleCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.5
+  m_Radius: 0.5372438
   m_Height: 1.4
   m_Direction: 1
-  m_Center: {x: 0, y: 0.6, z: 0}
+  m_Center: {x: 0.016311884, y: 0.6000001, z: 0.02093188}
 --- !u!1 &1377885980
 GameObject:
   m_ObjectHideFlags: 0
@@ -2306,7 +2306,7 @@ MonoBehaviour:
   chaseDistance: 10
   forgetDistance: 15
   chaseSpeed: 3.5
-  chargeAttackCollider: {fileID: 1766946441}
+  chargeAttackCollider: {fileID: 26516195}
   cooldownBetweenChargeAttacks: 5
   cooldownTimerChargeAttack: -1
   chargeAttackDamage: 25
@@ -2320,13 +2320,13 @@ MonoBehaviour:
   spinAttackCollider: {fileID: 26516195}
   cooldownBetweenSpinAttacks: 7
   cooldownTimerSpinAttack: 0
-  spinAttackDuration: 3
-  spinAttackDamagePerSecond: 15
+  spinAttackDuration: 1.5
+  spinAttackDamage: 5
   spinAttackRange: 2.5
   performingSpinAttack: 0
   isSpinning: 0
   spinTimer: 0
-  spinSpeed: 0
+  spinSpeed: 1800
   telegraphSpinAttackEffect: {fileID: 845006225}
   telegraphSpinAttackEffectImage: {fileID: 84071574}
   telegraphSpinDuration: 2
@@ -2336,29 +2336,6 @@ Animator:
   m_CorrespondingSourceObject: {fileID: 7442050115661319743, guid: cbc814ca6b730954b8a5e3641bde01c9, type: 3}
   m_PrefabInstance: {fileID: 1283643509}
   m_PrefabAsset: {fileID: 0}
---- !u!136 &1766946441
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1515263029}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.53
-  m_Height: 0
-  m_Direction: 1
-  m_Center: {x: 0, y: 0.48, z: 0.004188478}
 --- !u!195 &1766946442
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -2381,6 +2358,33 @@ NavMeshAgent:
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
+--- !u!54 &1766946443
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1515263029}
+  serializedVersion: 5
+  m_Mass: 1
+  m_LinearDamping: 0
+  m_AngularDamping: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &1801191421
 GameObject:
   m_ObjectHideFlags: 0

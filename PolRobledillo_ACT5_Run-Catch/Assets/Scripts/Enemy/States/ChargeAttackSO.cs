@@ -14,7 +14,7 @@ public class ChargeAttackSO : AStateSO
                     enemy.chargeAttackCollider.enabled = true;
                     enemy.performingChargeAttack = true;
                 })
-                .Append(enemy.transform.DOLocalMoveZ(enemy.transform.localPosition.z + enemy.chargeDistance, enemy.chargeTime))
+                .Append(enemy.transform.DOLocalMove(enemy.transform.position + (enemy.transform.forward * enemy.chargeDistance), enemy.chargeTime))
                 .AppendCallback(() =>
                 {
                     enemy.performingChargeAttack = false;

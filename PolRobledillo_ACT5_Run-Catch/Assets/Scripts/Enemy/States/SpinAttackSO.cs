@@ -7,6 +7,7 @@ public class SpinAttackSO : AStateSO
 {
     public override void OnStateEnter(EnemyStateMachine enemy)
     {
+        enemy.animator.SetBool("PerformingAttack", true);
         enemy.performAttack = -1;
 
         enemy.finishedTelegraphingSpinAttack = false;
@@ -23,6 +24,7 @@ public class SpinAttackSO : AStateSO
             if (enemy.spinTimer >= enemy.spinAttackDuration)
             {
                 enemy.isSpinning = false;
+                enemy.animator.SetBool("PerformingAttack", false);
                 enemy.spinTimer = 0f;
                 enemy.performingSpinAttack = false;
                 enemy.cooldownTimerSpinAttack = enemy.cooldownBetweenSpinAttacks;

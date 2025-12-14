@@ -30,7 +30,7 @@ public class EnemyStateMachine : MonoBehaviour
     public float chaseSpeed = 3.5f;
 
     [Header("Charge Attack Settings")]
-    public CapsuleCollider chargeAttackCollider;
+    public SphereCollider chargeAttackCollider;
     public float cooldownBetweenChargeAttacks = 5f;
     public float cooldownTimerChargeAttack = 0f;
     public float chargeAttackDamage = 25f;
@@ -49,7 +49,7 @@ public class EnemyStateMachine : MonoBehaviour
     public float cooldownBetweenSpinAttacks = 7f;
     public float cooldownTimerSpinAttack = 0f;
     public float spinAttackDuration = 3f;
-    public float spinAttackDamagePerSecond = 15f;
+    public float spinAttackDamage = 15f;
     public float spinAttackRange = 4f;
     public bool performingSpinAttack = false;
     public bool isSpinning = false;
@@ -122,5 +122,21 @@ public class EnemyStateMachine : MonoBehaviour
         currentState.OnStateExit(this);
         currentState = newState;
         currentState.OnStateEnter(this);
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        IDamageable target = other.gameObject.GetComponent<IDamageable>();
+        if (target != null)
+        {
+            if (performingSpinAttack)
+            {
+                target.TakeDamage((int)spinAttackDamage);
+            }
+            else if (performingChargeAttack) 
+            {
+                target.TakeDamage((int)chargeAttackDamage);
+            }
+        }
     }
 }
